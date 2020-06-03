@@ -95,6 +95,11 @@
                 <artifactId>camunda-bpm-model-cmmn</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.camunda.bpm.model</groupId>
+                <artifactId>camunda-bpm-model-dmn</artifactId>
+                <version>${camunda.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

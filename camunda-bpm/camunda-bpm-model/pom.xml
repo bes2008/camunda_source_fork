@@ -15,6 +15,7 @@
         <module>camunda-bpm-model-bpmn</module>
         <module>camunda-bpm-model-xml</module>
         <module>camunda-bpm-model-cmmn</module>
+        <module>camunda-bpm-model-dmn</module>
     </modules>
 
 
