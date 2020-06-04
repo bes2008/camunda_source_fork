@@ -13,6 +13,7 @@
         <module>camunda-connect</module>
         <module>camunda-bpm</module>
         <module>camunda-engine-rest-jaxrs2</module>
+        <module>camunda-engine-spring</module>
     </modules>
 
     <properties>
