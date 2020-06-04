@@ -42,7 +42,6 @@ import org.springframework.context.annotation.Primary;
 @Import({
   CamundaBpmConfiguration.class,
   CamundaBpmActuatorConfiguration.class,
-  CamundaBpmPluginConfiguration.class,
   SpringProcessEngineServicesConfiguration.class
 })
 @Configuration
