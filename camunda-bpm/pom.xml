@@ -18,6 +18,7 @@
         <module>camunda-bpm-dmn</module>
         <module>camunda-engine</module>
         <module>camunda-engine-rest-jaxrs2</module>
+        <module>camunda-engine-spring</module>
     </modules>
 
 
