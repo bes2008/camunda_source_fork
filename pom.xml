@@ -24,10 +24,48 @@
         <jersey.version>2.30.1</jersey.version>
         <assertj.version>3.16.1</assertj.version>
         <httpclient.version>4.5.12</httpclient.version>
+        <mybatis.version>3.5.3</mybatis.version>
+        <spring.version>5.2.6.RELEASE</spring.version>
+        <ant.version>1.7.1</ant.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.ant</groupId>
+                <artifactId>ant</artifactId>
+                <version>${ant.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.camunda.commons</groupId>
                 <artifactId>camunda-commons-utils</artifactId>
@@ -39,6 +77,11 @@
                 <version>${camunda.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.camunda.commons</groupId>
+                <artifactId>camunda-commons-typed-values</artifactId>
+                <version>${camunda.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.github.fangjinuo.langx</groupId>
                 <artifactId>langx-java8</artifactId>
@@ -100,6 +143,12 @@
                 <artifactId>camunda-bpm-model-dmn</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -113,8 +162,6 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
