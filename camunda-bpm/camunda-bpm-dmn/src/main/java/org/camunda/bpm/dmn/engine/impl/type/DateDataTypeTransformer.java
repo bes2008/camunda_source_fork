@@ -16,25 +16,16 @@
  */
 package org.camunda.bpm.dmn.engine.impl.type;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.camunda.bpm.dmn.engine.DmnEngineException;
 import org.camunda.bpm.dmn.engine.impl.spi.type.DmnDataTypeTransformer;
 import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.DateValue;
 import org.camunda.bpm.engine.variable.value.TypedValue;
-import org.camunda.feel.syntaxtree.ZonedTime;
 
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Period;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.*;
+import java.util.Date;
 
 /**
  * Transform values of type {@link Date} and {@link String} into
@@ -45,65 +36,63 @@ import java.time.ZonedDateTime;
  */
 public class DateDataTypeTransformer implements DmnDataTypeTransformer {
 
-  protected SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+    protected SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
-  @Override
-  public TypedValue transform(Object value) throws IllegalArgumentException {
-    if (value instanceof Date) {
-      return Variables.dateValue((Date) value);
+    @Override
+    public TypedValue transform(Object value) throws IllegalArgumentException {
+        if (value instanceof Date) {
+            return Variables.dateValue((Date) value);
 
-    } else if (value instanceof String) {
-      Date date = transformString((String) value);
-      return Variables.dateValue(date);
+        } else if (value instanceof String) {
+            Date date = transformString((String) value);
+            return Variables.dateValue(date);
 
-    } if (value instanceof ZonedDateTime) {
-      Instant instant = ((ZonedDateTime) value).toInstant();
-      Date date = Date.from(instant);
+        }
+        if (value instanceof ZonedDateTime) {
+            Instant instant = ((ZonedDateTime) value).toInstant();
+            Date date = Date.from(instant);
 
-      return Variables.dateValue(date);
+            return Variables.dateValue(date);
 
-    } else if (value instanceof LocalDateTime) {
-      ZoneId defaultTimeZone = ZoneId.systemDefault();
-      Instant instant = ((LocalDateTime) value)
-        .atZone(defaultTimeZone)
-        .toInstant();
+        } else if (value instanceof LocalDateTime) {
+            ZoneId defaultTimeZone = ZoneId.systemDefault();
+            Instant instant = ((LocalDateTime) value)
+                    .atZone(defaultTimeZone)
+                    .toInstant();
 
-      Date date = Date.from(instant);
+            Date date = Date.from(instant);
 
-      return Variables.dateValue(date);
+            return Variables.dateValue(date);
 
-    } else if (value instanceof LocalDate) {
-      throw unsupportedType(value);
+        } else if (value instanceof LocalDate) {
+            throw unsupportedType(value);
 
-    } else if (value instanceof LocalTime) {
-      throw unsupportedType(value);
+        } else if (value instanceof LocalTime) {
+            throw unsupportedType(value);
 
-    } else if (value instanceof Duration) {
-      throw unsupportedType(value);
+        } else if (value instanceof Duration) {
+            throw unsupportedType(value);
 
-    } else if (value instanceof Period) {
-      throw unsupportedType(value);
+        } else if (value instanceof Period) {
+            throw unsupportedType(value);
 
-    } else if (value instanceof ZonedTime) {
-      throw unsupportedType(value);
-
-    } else {
-      throw new IllegalArgumentException();
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
-  }
 
-  protected Date transformString(String value) {
-    try {
-      return format.parse(value);
-    } catch (ParseException e) {
-      throw new IllegalArgumentException(e);
+    protected Date transformString(String value) {
+        try {
+            return format.parse(value);
+        } catch (ParseException e) {
+            throw new IllegalArgumentException(e);
+        }
     }
-  }
 
-  protected DmnEngineException unsupportedType(Object value) {
-    String className = value.getClass().getName();
-    return new DmnEngineException("Unsupported type: '" + className +
-      "' cannot be converted to 'java.util.Date'");
-  }
+    protected DmnEngineException unsupportedType(Object value) {
+        String className = value.getClass().getName();
+        return new DmnEngineException("Unsupported type: '" + className +
+                "' cannot be converted to 'java.util.Date'");
+    }
 
 }

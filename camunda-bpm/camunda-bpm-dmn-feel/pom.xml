@@ -4,17 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>camunda-bpm</artifactId>
-        <groupId>org.camunda.bpm</groupId>
+        <groupId>com.camunda.bpm</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.camunda.bpm.dmn.feel</groupId>
+    <groupId>com.camunda.bpm.dmn.feel</groupId>
     <artifactId>camunda-bpm-dmn-feel</artifactId>
 
     <packaging>pom</packaging>
     <modules>
+        <module>camunda-bpm-dmn-feel-el</module>
         <module>camnuda-bpm-dmn-feel-api</module>
-        <module>camunda-bpm-dmn-feel-juel</module>
     </modules>
+
 </project>

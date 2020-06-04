@@ -24,7 +24,6 @@ import org.camunda.bpm.dmn.engine.delegate.DmnDecisionEvaluationListener;
 import org.camunda.bpm.dmn.engine.impl.DefaultDmnEngineConfiguration;
 import org.camunda.bpm.dmn.engine.impl.spi.el.DmnScriptEngineResolver;
 import org.camunda.bpm.dmn.engine.impl.spi.transform.DmnTransformer;
-import org.camunda.bpm.dmn.feel.impl.scala.function.FeelCustomFunctionProvider;
 import org.camunda.bpm.engine.impl.dmn.el.ProcessEngineElProvider;
 import org.camunda.bpm.engine.impl.dmn.transformer.DecisionDefinitionHandler;
 import org.camunda.bpm.engine.impl.dmn.transformer.DecisionRequirementsDefinitionTransformHandler;
@@ -49,7 +48,6 @@ public class DmnEngineConfigurationBuilder {
   protected DmnHistoryEventProducer dmnHistoryEventProducer;
   protected DmnScriptEngineResolver scriptEngineResolver;
   protected ExpressionManager expressionManager;
-  protected List<FeelCustomFunctionProvider> feelCustomFunctionProviders;
 
   /**
    * Creates a new builder to modify the given DMN engine configuration.
@@ -78,11 +76,6 @@ public class DmnEngineConfigurationBuilder {
     return this;
   }
 
-  public DmnEngineConfigurationBuilder feelCustomFunctionProviders(List<FeelCustomFunctionProvider> feelCustomFunctionProviders) {
-    this.feelCustomFunctionProviders = feelCustomFunctionProviders;
-
-    return this;
-  }
 
   /**
    * Modify the given DMN engine configuration and return it.
@@ -110,10 +103,6 @@ public class DmnEngineConfigurationBuilder {
 
       ProcessEngineElProvider elProvider = new ProcessEngineElProvider(expressionManager);
       dmnEngineConfiguration.setElProvider(elProvider);
-    }
-
-    if (dmnEngineConfiguration.getFeelCustomFunctionProviders() == null) {
-      dmnEngineConfiguration.setFeelCustomFunctionProviders(feelCustomFunctionProviders);
     }
 
     return dmnEngineConfiguration;

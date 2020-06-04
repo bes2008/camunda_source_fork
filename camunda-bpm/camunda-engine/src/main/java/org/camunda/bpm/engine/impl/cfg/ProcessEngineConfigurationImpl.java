@@ -56,7 +56,6 @@ import org.apache.ibatis.transaction.managed.ManagedTransactionFactory;
 import org.camunda.bpm.dmn.engine.DmnEngine;
 import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
 import org.camunda.bpm.dmn.engine.impl.DefaultDmnEngineConfiguration;
-import org.camunda.bpm.dmn.feel.impl.scala.function.FeelCustomFunctionProvider;
 import org.camunda.bpm.engine.ArtifactFactory;
 import org.camunda.bpm.engine.AuthorizationService;
 import org.camunda.bpm.engine.CaseService;
@@ -359,7 +358,6 @@ import org.camunda.bpm.engine.repository.DeploymentBuilder;
 import org.camunda.bpm.engine.repository.DeploymentHandlerFactory;
 import org.camunda.bpm.engine.runtime.Incident;
 import org.camunda.bpm.engine.runtime.WhitelistingDeserializationTypeValidator;
-import org.camunda.bpm.engine.test.mock.MocksResolverFactory;
 import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.type.ValueType;
 
@@ -566,10 +564,6 @@ public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfig
   protected DefaultDmnEngineConfiguration dmnEngineConfiguration;
   protected DmnEngine dmnEngine;
 
-  /**
-   * a list of DMN FEEL custom function providers
-   */
-  protected List<FeelCustomFunctionProvider> dmnFeelCustomFunctionProviders;
 
   /**
    * Enable DMN FEEL legacy behavior
@@ -2265,7 +2259,6 @@ public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfig
   protected void initScripting() {
     if (resolverFactories == null) {
       resolverFactories = new ArrayList<>();
-      resolverFactories.add(new MocksResolverFactory());
       resolverFactories.add(new VariableScopeResolverFactory());
       resolverFactories.add(new BeansResolverFactory());
     }
@@ -2295,7 +2288,6 @@ public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfig
           .dmnHistoryEventProducer(dmnHistoryEventProducer)
           .scriptEngineResolver(scriptingEngines)
           .expressionManager(expressionManager)
-          .feelCustomFunctionProviders(dmnFeelCustomFunctionProviders)
           .enableFeelLegacyBehavior(dmnFeelEnableLegacyBehavior)
           .build();
 
@@ -4591,14 +4583,6 @@ public abstract class ProcessEngineConfigurationImpl extends ProcessEngineConfig
     return this;
   }
 
-  public List<FeelCustomFunctionProvider> getDmnFeelCustomFunctionProviders() {
-    return dmnFeelCustomFunctionProviders;
-  }
-
-  public ProcessEngineConfigurationImpl setDmnFeelCustomFunctionProviders(List<FeelCustomFunctionProvider> dmnFeelCustomFunctionProviders) {
-    this.dmnFeelCustomFunctionProviders = dmnFeelCustomFunctionProviders;
-    return this;
-  }
 
   public boolean isDmnFeelEnableLegacyBehavior() {
     return dmnFeelEnableLegacyBehavior;

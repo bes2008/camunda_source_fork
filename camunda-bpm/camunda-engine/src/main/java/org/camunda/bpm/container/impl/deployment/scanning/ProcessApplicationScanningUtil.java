@@ -54,16 +54,7 @@ public class ProcessApplicationScanningUtil {
    * @return a Map of process definitions
    */
   public static Map<String, byte[]> findResources(ClassLoader classLoader, String paResourceRootPath, URL metaFileUrl, String[] additionalResourceSuffixes) {
-    ProcessApplicationScanner scanner = null;
-
-    try {
-      // check if we must use JBoss VFS
-      classLoader.loadClass("org.jboss.vfs.VFS");
-      scanner = new VfsProcessApplicationScanner();
-    }
-    catch (Throwable t) {
-      scanner = new ClassPathProcessApplicationScanner();
-    }
+    ProcessApplicationScanner scanner  = new ClassPathProcessApplicationScanner();
 
     return scanner.findResources(classLoader, paResourceRootPath, metaFileUrl, additionalResourceSuffixes);
 

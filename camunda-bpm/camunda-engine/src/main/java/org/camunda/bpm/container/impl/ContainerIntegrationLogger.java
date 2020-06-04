@@ -31,7 +31,6 @@ import javax.naming.NamingException;
 
 import org.camunda.bpm.engine.ProcessEngineException;
 import org.camunda.bpm.engine.impl.ProcessEngineLogger;
-import org.jboss.vfs.VirtualFile;
 
 /**
  * @author Daniel Meyer
@@ -107,17 +106,7 @@ public class ContainerIntegrationLogger extends ProcessEngineLogger {
         "Could not load virtual file for url '{}'", url), e);
   }
 
-  public void cannotScanVfsRoot(VirtualFile processArchiveRoot, IOException e) {
-    logWarn(
-        "012",
-        "Cannot scan process archive root {}", processArchiveRoot, e);
-  }
 
-  public void cannotReadInputStreamForFile(String resourceName, VirtualFile processArchiveRoot, IOException e) {
-    logWarn(
-        "013",
-        "Could not read input stream of file '{}' from process archive '{}'.", resourceName, processArchiveRoot, e);
-  }
 
   public ProcessEngineException exceptionWhileLoadingCpRoots(String strippedPaResourceRootPath, ClassLoader classLoader, IOException e) {
     return new ProcessEngineException(exceptionMessage(

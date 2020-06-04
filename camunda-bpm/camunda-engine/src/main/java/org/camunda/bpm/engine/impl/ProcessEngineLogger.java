@@ -44,7 +44,6 @@ import org.camunda.bpm.engine.impl.persistence.entity.JobEntity;
 import org.camunda.bpm.engine.impl.plugin.AdministratorAuthorizationPluginLogger;
 import org.camunda.bpm.engine.impl.pvm.PvmLogger;
 import org.camunda.bpm.engine.impl.scripting.ScriptLogger;
-import org.camunda.bpm.engine.impl.test.TestLogger;
 import org.camunda.bpm.engine.impl.util.EngineUtilLogger;
 import org.camunda.commons.logging.BaseLogger;
 
@@ -96,9 +95,6 @@ public class ProcessEngineLogger extends BaseLogger {
 
   public static final JobExecutorLogger JOB_EXECUTOR_LOGGER = BaseLogger.createLogger(
       JobExecutorLogger.class, PROJECT_CODE, "org.camunda.bpm.engine.jobexecutor", "14");
-
-  public static final TestLogger TEST_LOGGER = BaseLogger.createLogger(
-      TestLogger.class, PROJECT_CODE, "org.camunda.bpm.engine.test", "15");
 
   public static final ContextLogger CONTEXT_LOGGER = BaseLogger.createLogger(
       ContextLogger.class, PROJECT_CODE, "org.camunda.bpm.engine.context", "16");

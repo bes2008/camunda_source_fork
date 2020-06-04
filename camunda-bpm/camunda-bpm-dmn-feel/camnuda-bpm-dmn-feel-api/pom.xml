@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>camunda-bpm-dmn-feel</artifactId>
-        <groupId>org.camunda.bpm.dmn.feel</groupId>
+        <groupId>com.camunda.bpm.dmn.feel</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -12,7 +12,7 @@
     <artifactId>camnuda-bpm-dmn-feel-api</artifactId>
     <dependencies>
         <dependency>
-            <groupId>org.camunda.commons</groupId>
+            <groupId>com.camunda.commons</groupId>
             <artifactId>camunda-commons-typed-values</artifactId>
         </dependency>
     </dependencies>

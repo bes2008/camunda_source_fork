@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.camunda</groupId>
+    <groupId>com.camunda</groupId>
     <artifactId>camunda</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
@@ -86,68 +86,72 @@
             </dependency>
 
             <dependency>
-                <groupId>org.camunda.commons</groupId>
+                <groupId>com.camunda.commons</groupId>
                 <artifactId>camunda-commons-utils</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.camunda.commons</groupId>
+                <groupId>com.camunda.commons</groupId>
                 <artifactId>camunda-commons-logging</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.camunda.commons</groupId>
+                <groupId>com.camunda.commons</groupId>
                 <artifactId>camunda-commons-typed-values</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.camunda.connect</groupId>
+                <groupId>com.camunda.connect</groupId>
                 <artifactId>camunda-connect-core</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.camunda.connect</groupId>
+                <groupId>com.camunda.connect</groupId>
                 <artifactId>camunda-connect-http-client</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.camunda.bpm.model</groupId>
+                <groupId>com.camunda.bpm.model</groupId>
                 <artifactId>camunda-bpm-model-bpmn</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.camunda.bpm.model</groupId>
+                <groupId>com.camunda.bpm.model</groupId>
                 <artifactId>camunda-bpm-model-xml</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.camunda.bpm.model</groupId>
+                <groupId>com.camunda.bpm.model</groupId>
                 <artifactId>camunda-bpm-model-cmmn</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.camunda.bpm.model</groupId>
+                <groupId>com.camunda.bpm.model</groupId>
                 <artifactId>camunda-bpm-model-dmn</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
 
-
             <dependency>
-                <groupId>org.camunda.bpm.dmn.feel</groupId>
+                <groupId>com.camunda.bpm.dmn.feel</groupId>
                 <artifactId>camnuda-bpm-dmn-feel-api</artifactId>
+                <version>${camunda.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.camunda.bpm.dmn.feel</groupId>
+                <artifactId>camunda-bpm-dmn-feel-el</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.camunda.bpm</groupId>
+                <groupId>com.camunda.bpm</groupId>
                 <artifactId>camunda-bpm-dmn</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.camunda.bpm</groupId>
+                <groupId>com.camunda.bpm</groupId>
                 <artifactId>camunda-engine</artifactId>
                 <version>${camunda.version}</version>
             </dependency>

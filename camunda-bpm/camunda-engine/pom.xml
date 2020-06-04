@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.camunda.bpm</groupId>
+        <groupId>com.camunda.bpm</groupId>
         <artifactId>camunda-bpm</artifactId>
         <version>1.0.0</version>
     </parent>
@@ -13,28 +13,33 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.camunda.bpm.model</groupId>
+            <groupId>com.camunda.bpm.model</groupId>
             <artifactId>camunda-bpm-model-bpmn</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.bpm.model</groupId>
+            <groupId>com.camunda.bpm.model</groupId>
             <artifactId>camunda-bpm-model-cmmn</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.bpm.model</groupId>
+            <groupId>com.camunda.bpm.model</groupId>
             <artifactId>camunda-bpm-model-dmn</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.commons</groupId>
+            <groupId>com.camunda.commons</groupId>
             <artifactId>camunda-commons-logging</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.commons</groupId>
+            <groupId>com.camunda.commons</groupId>
             <artifactId>camunda-commons-typed-values</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.camunda.bpm</groupId>
+            <groupId>com.camunda.bpm</groupId>
             <artifactId>camunda-bpm-dmn</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.camunda.bpm.dmn.feel</groupId>
+            <artifactId>camunda-bpm-dmn-feel-el</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
@@ -78,12 +83,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>catalina</artifactId>
-            <version>6.0.37</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-email</artifactId>
             <version>1.5</version>
@@ -95,6 +94,13 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+            <version>8.5.0</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

@@ -36,8 +36,6 @@ import org.camunda.bpm.dmn.engine.spi.DmnEngineMetricCollector;
 import org.camunda.bpm.dmn.feel.impl.FeelEngine;
 import org.camunda.bpm.dmn.feel.impl.FeelEngineFactory;
 import org.camunda.bpm.dmn.feel.impl.juel.FeelEngineFactoryImpl;
-import org.camunda.bpm.dmn.feel.impl.scala.ScalaFeelEngineFactory;
-import org.camunda.bpm.dmn.feel.impl.scala.function.FeelCustomFunctionProvider;
 import org.camunda.bpm.model.dmn.impl.DmnModelConstants;
 
 public class DefaultDmnEngineConfiguration extends DmnEngineConfiguration {
@@ -64,10 +62,6 @@ public class DefaultDmnEngineConfiguration extends DmnEngineConfiguration {
   protected FeelEngineFactory feelEngineFactory;
   protected FeelEngine feelEngine;
 
-  /**
-   * a list of DMN FEEL custom function providers
-   */
-  protected List<FeelCustomFunctionProvider> feelCustomFunctionProviders;
 
   /**
    * Enable FEEL legacy behavior
@@ -188,7 +182,6 @@ public class DefaultDmnEngineConfiguration extends DmnEngineConfiguration {
   protected void initFeelEngine() {
     if (feelEngineFactory == null) {
       if (!enableFeelLegacyBehavior) {
-        feelEngineFactory = new ScalaFeelEngineFactory(feelCustomFunctionProviders);
 
       } else {
         feelEngineFactory = new FeelEngineFactoryImpl();
@@ -549,32 +542,6 @@ public class DefaultDmnEngineConfiguration extends DmnEngineConfiguration {
     return this;
   }
 
-  /**
-   * @return the list of FEEL Custom Function Providers
-   */
-  public List<FeelCustomFunctionProvider> getFeelCustomFunctionProviders() {
-    return feelCustomFunctionProviders;
-  }
-
-  /**
-   * Set a list of FEEL Custom Function Providers.
-   *
-   * @param feelCustomFunctionProviders a list of FEEL Custom Function Providers
-   */
-  public void setFeelCustomFunctionProviders(List<FeelCustomFunctionProvider> feelCustomFunctionProviders) {
-    this.feelCustomFunctionProviders = feelCustomFunctionProviders;
-  }
-
-  /**
-   * Set a list of FEEL Custom Function Providers.
-   *
-   * @param feelCustomFunctionProviders a list of FEEL Custom Function Providers
-   * @return this
-   */
-  public DefaultDmnEngineConfiguration feelCustomFunctionProviders(List<FeelCustomFunctionProvider> feelCustomFunctionProviders) {
-    setFeelCustomFunctionProviders(feelCustomFunctionProviders);
-    return this;
-  }
 
   /**
    * @return whether FEEL legacy behavior is enabled or not
