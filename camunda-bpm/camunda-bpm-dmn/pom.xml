@@ -3,12 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>camunda-bpm</artifactId>
         <groupId>org.camunda.bpm</groupId>
+        <artifactId>camunda-bpm</artifactId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>org.camunda.bpm</groupId>
     <artifactId>camunda-bpm-dmn</artifactId>
 
     <dependencies>
@@ -24,7 +25,7 @@
 
         <dependency>
             <groupId>org.camunda.bpm.model</groupId>
-            <artifactId>camunda-dmn-model</artifactId>
+            <artifactId>camunda-bpm-model-dmn</artifactId>
         </dependency>
 
         <dependency>

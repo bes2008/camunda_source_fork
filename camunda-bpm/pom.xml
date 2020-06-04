@@ -14,9 +14,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>camunda-bpm-model</module>
-        <module>camunda-engine</module>
-        <module>camunda-bpm-dmn</module>
         <module>camunda-bpm-dmn-feel</module>
+        <module>camunda-bpm-dmn</module>
+        <module>camunda-engine</module>
     </modules>
 
 

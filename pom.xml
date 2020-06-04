@@ -18,6 +18,7 @@
         <junit.version>4.13</junit.version>
         <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>
+        <log4j2.version>2.13.2</log4j2.version>
         <camunda.version>${project.version}</camunda.version>
         <langx.version>2.5.0</langx.version>
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
@@ -45,6 +46,24 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>jcl-over-slf4j</artifactId>
                 <version>${slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j2.version}</version>
             </dependency>
 
             <dependency>
@@ -122,7 +141,16 @@
                 <version>${camunda.version}</version>
             </dependency>
 
-
+            <dependency>
+                <groupId>org.camunda.bpm</groupId>
+                <artifactId>camunda-bpm-dmn</artifactId>
+                <version>${camunda.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.camunda.bpm</groupId>
+                <artifactId>camunda-engine</artifactId>
+                <version>${camunda.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.github.fangjinuo.langx</groupId>
