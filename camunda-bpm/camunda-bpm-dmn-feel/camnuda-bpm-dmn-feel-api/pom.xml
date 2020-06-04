@@ -3,17 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>camunda-bpm</artifactId>
-        <groupId>org.camunda.bpm</groupId>
+        <artifactId>camunda-bpm-dmn-feel</artifactId>
+        <groupId>org.camunda.bpm.dmn.feel</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.camunda.bpm.dmn.feel</groupId>
-    <artifactId>camunda-bpm-dmn-feel</artifactId>
+    <artifactId>camnuda-bpm-dmn-feel-api</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.camunda.commons</groupId>
+            <artifactId>camunda-commons-typed-values</artifactId>
+        </dependency>
+    </dependencies>
 
-    <packaging>pom</packaging>
-    <modules>
-        <module>camnuda-bpm-dmn-feel-api</module>
-    </modules>
 </project>
