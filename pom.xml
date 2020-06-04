@@ -13,6 +13,7 @@
         <module>camunda-connect</module>
         <module>camunda-bpm</module>
         <module>camunda-bpm-spring-boot-starter</module>
+        <module>camunda-bpm-spring-boot-starter-rest</module>
     </modules>
 
     <properties>
@@ -156,6 +157,28 @@
                 <artifactId>camunda-engine</artifactId>
                 <version>${camunda.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.camunda.bpm</groupId>
+                <artifactId>camunda-engine-rest-jaxrs2</artifactId>
+                <version>${camunda.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.camunda.bpm</groupId>
+                <artifactId>camunda-engine-spring</artifactId>
+                <version>${camunda.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.camunda</groupId>
+                <artifactId>camunda-bpm-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.camunda</groupId>
+                <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>com.github.fangjinuo.langx</groupId>
